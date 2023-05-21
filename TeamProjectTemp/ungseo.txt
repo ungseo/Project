@@ -1,0 +1,8 @@
+1일차
+기획, ERD 작성, 컴포넌트 구조 작성, Vue.js 이용한 컴포넌트 .vue 파일 생성
+
+2일차
+HomeView 레이아웃 생성, 홈 Background에 동영상 삽입 등
+
+3일차
+로그인 View CSS작성, 회원가입 View CSS작성 등

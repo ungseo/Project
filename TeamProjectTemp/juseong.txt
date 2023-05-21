@@ -1,0 +1,14 @@
+# 1일차  
+
+ERD 간략 생성, 기초 골격 구조 생성
+나중에 해야할 일: nickname을 넣을려면 accounts에 nickname model을 생성하자. (안하는 방향으로 갈 듯?)
+
+
+# 2일차  
+
+TMDB 데이터 fixture로 저장 및 model, serializer, view 함수 기초 정의  
+
+
+# 3일차  
+
+movie 데이터만 로드 및 card 간략 구성
