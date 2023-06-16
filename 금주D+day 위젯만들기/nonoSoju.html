@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ddu"></div>
+    <div class="ddu"></div>
+    <div class="ddu"></div>
+    <div class="ddu"></div>
+    <div class="ddu"></div>
+    <div class="ddu"></div>
+    <div class="ddu"></div>
+    <div class="ddu"></div>
+    <div class="ddu"></div>
+    <div class="ddu"></div>
+    <div class="ddu"></div>
+    <div class="ddu"></div>
+    <div class="neck"></div>
+    <div class="top"></div>
+    <div class="brand">
+        <h3 id="title">금주 D+day 계산기</h3>
+        <div class="photo">
+            <img style="width: 270px; height: 230px;" src="https://blog.kakaocdn.net/dn/bk1vis/btsj6BHmnFp/xXy9JyW8AhUMry2fZrzT1k/img.gif" alt="우웩">
+            <h1 class="dda">
+            </h1>
+        </div>
+
+    </div>
+    <div class="bottom"></div>
+</body>
+<style>
+    .ddu {
+        width: 100px;
+        height: 5px;
+        background-color: green;
+        margin: auto;
+        border: 1px solid black;
+    }
+    .neck {
+        width: 98px;
+        height: 75px;
+        background-color: greenyellow;
+        margin: auto;
+        border-bottom: none;
+        border: 1px solid black;
+
+    }
+    .top {
+        width: 270px;
+        height: 120px;
+        justify-content: center;
+        background-color: greenyellow;
+        margin: auto;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border: 1px solid black;
+
+    }
+    .bottom {
+        width: 270px;
+        height: 120px;
+        justify-content: center;
+        background-color: greenyellow;
+        margin: auto;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border: 1px solid black;
+
+    }
+    .brand {
+        width: 270px;
+        height: 300px;
+        justify-content: center;
+        background-color: ivory;
+        margin: auto;
+        margin-bottom: 0px;
+        text-align: center;
+        border: 1px solid black;
+
+    }
+    .dda {
+        position: absolute;
+        top: 50%;
+        color: white !important;
+        left:40%;
+    }
+    .photo {
+        position: relative;
+    }
+    #title {
+        margin: 15px !important;
+    }
+</style>
+<script>
+    const stD = new Date('2023-06-15');
+    const todayTime = new Date();
+    const computedday = todayTime - stD;
+    const diffDay = computedday/(60000*60*24);
+    const Dday = document.querySelector('.dda');
+    Dday.innerText = Math.floor(diffDay) + '일차';
+</script>
+</html>
