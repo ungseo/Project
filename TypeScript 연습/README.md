@@ -12,6 +12,10 @@
 
 - TS의 type과 interface, implements, extends 등등 상속에 대한 이해
 
-- Generics 과 any type의 차이점에 대한 이해 
+- Generics 과 any type의 차이점에 대한 이해
+
+- Node.js 를 이용해 JS -> TS로 컴파일 하는방법
+
+- 각종 셋팅 방법
 
 - 기타 등 등 
