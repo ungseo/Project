@@ -1,14 +1,6 @@
 # TS로 BlockChain 만들기 실습
 
-
-
-
-
 <img title="" src="file:///C:/Users/Ungseo/AppData/Roaming/marktext/images/2023-06-20-16-27-41-image.png" alt="" width="699">
-
-
-
-
 
 배운점:
 
