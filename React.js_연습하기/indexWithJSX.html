@@ -13,27 +13,115 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
   <script type="text/babel">
-    const Title = () => (
-      <h3 id="title" onClick={() => console.log("스쳤어!")}>
-        Hello I'm a Text
-      </h3>
-    );
     const root = document.getElementById("root");
-    const Btn = () => (
-      <button
-        onClick={() => console.log("눌렀네?")}
-        style={{ backgroundColor: "tomato" }}
-      >
-        Click Me
-      </button>
-    );
+    function MinutesToHours() {
+      const [minutes, setMinutes] = React.useState(0);
+      const [flipped, setFlipped] = React.useState(false);
+      const [hours, setHours] = React.useState(0);
+      const onChange = (evt) => {
+        if (evt.target.id === "minutes") {
+          setMinutes(evt.target.value);
+          console.log("분");
+        } else if (evt.target.id === "hours") {
+          setHours(evt.target.value);
+          console.log("시");
+        }
+      };
+      const reset = () => {
+        setMinutes(0);
+        setHours(0);
+      };
+      const onFlip = () => {
+        setFlipped((current) => !current);
+        reset();
+      };
+      return (
+        <div>
+          <div>
+            <label htmlFor="minutes">Minute</label>
+            <input
+              id="minutes"
+              placeholder="Minutes"
+              type="number"
+              onChange={onChange}
+              value={!flipped ? minutes : hours * 60}
+              disabled={flipped}
+            />
+          </div>
+          <div>
+            <br />
 
-    const Container = () => (
-      <div class="container">
-        <Title />
-        <Btn />
-      </div>
-    );
-    ReactDOM.render(<Container />, root);
+            <label htmlFor="hours">Hours</label>
+            <input
+              id="hours"
+              placeholder="Hours"
+              value={flipped ? hours : minutes / 60}
+              type="number"
+              disabled={!flipped}
+              onChange={onChange}
+            />
+          </div>
+          <button onClick={reset}>Reset</button>
+          <button onClick={onFlip}>Flip</button>
+        </div>
+      );
+    }
+    function KmToMiles() {
+      const [amount, setAmount] = React.useState(0);
+      const [flip, setFlip] = React.useState(false);
+      const onChange = function (event) {
+        setAmount(event.target.value);
+      };
+      const onFlip = function () {
+        setFlip((currunt) => !currunt);
+      };
+      const reset = function () {
+        setAmount(0);
+      };
+      return (
+        <div>
+          <h1>km to mile</h1>
+          <br />
+          <label for="km">Killometer: </label>
+          <input
+            id="km"
+            type="number"
+            value={!flip ? amount : amount * 1.609344}
+            onChange={onChange}
+            disabled={flip}
+          />
+          <br />
+          <label for="mile">Mile: </label>
+          <input
+            type="number"
+            id="mile"
+            value={flip ? amount : amount * 0.621371}
+            onChange={onChange}
+            disabled={!flip}
+          />
+          <br />
+          <button onClick={reset}>Reset</button>
+          <button onClick={onFlip}>Flip!</button>
+        </div>
+      );
+    }
+    function App() {
+      const [index, setIndex] = React.useState("0");
+      const onSelect = function (event) {
+        setIndex(event.target.value);
+      };
+      return (
+        <div>
+          <h1>Super Converter!</h1>
+          <select value={index} name="" id="" onChange={onSelect}>
+            <option value="0">Minutes & Hours</option>
+            <option value="1">Km To Mile</option>
+          </select>
+          {index === "0" ? <MinutesToHours /> : null}
+          {index === "1" ? <KmToMiles /> : null}
+        </div>
+      );
+    }
+    ReactDOM.render(<App />, root);
   </script>
 </html>

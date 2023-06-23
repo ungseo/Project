@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <span id="count">Total Clicks = 0</span>
-    <br>
+    <br />
     <button id="btn">Click Me</button>
-</body>
+  </body>
 
-<script>
+  <script>
     const button = document.querySelector("#btn");
     let num = 0;
-    const span = document.querySelector('#count')
+    const span = document.querySelector("#count");
 
     button.addEventListener("click", function plus(evt) {
-        console.log('눌렀네?')
-        num += 1;
-        span.innerText = `Total Clicks = ${num}`;
-    })
-</script>
+      console.log("눌렀네?");
+      num += 1;
+      span.innerText = `Total Clicks = ${num}`;
+    });
+  </script>
 </html>
