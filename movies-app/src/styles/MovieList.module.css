@@ -1,0 +1,5 @@
+.movieCard {
+  width: 500px;
+  height: 1000px;
+  object-fit: cover;
+}
