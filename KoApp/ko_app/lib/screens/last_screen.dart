@@ -47,7 +47,7 @@ class _LastScreenState extends State<LastScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(
-            height: 10,
+            height: 80,
           ),
           const Text(
             "퇴근이다~!!!",
@@ -80,11 +80,13 @@ class _LastScreenState extends State<LastScreen> {
                             style: BorderStyle.solid,
                           ),
                         ),
-                        child: Text(
-                          (totalMoney + 1000000).toString(),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 24,
+                        child: Center(
+                          child: Text(
+                            (totalMoney + 1000000).toString(),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 24,
+                            ),
                           ),
                         ),
                       )),
@@ -111,11 +113,13 @@ class _LastScreenState extends State<LastScreen> {
                             style: BorderStyle.solid,
                           ),
                         ),
-                        child: Text(
-                          totalMoney.toString(),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 24,
+                        child: Center(
+                          child: Text(
+                            totalMoney.toString(),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 24,
+                            ),
                           ),
                         ),
                       )),
@@ -142,11 +146,13 @@ class _LastScreenState extends State<LastScreen> {
                             style: BorderStyle.solid,
                           ),
                         ),
-                        child: Text(
-                          widget.savedMoney[0].toString(),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 24,
+                        child: Center(
+                          child: Text(
+                            widget.savedMoney[0].toString(),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 24,
+                            ),
                           ),
                         ),
                       )),
@@ -173,11 +179,13 @@ class _LastScreenState extends State<LastScreen> {
                             style: BorderStyle.solid,
                           ),
                         ),
-                        child: Text(
-                          widget.savedMoney[1].toString(),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 24,
+                        child: Center(
+                          child: Text(
+                            widget.savedMoney[1].toString(),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 24,
+                            ),
                           ),
                         ),
                       )),
@@ -204,11 +212,13 @@ class _LastScreenState extends State<LastScreen> {
                             style: BorderStyle.solid,
                           ),
                         ),
-                        child: Text(
-                          widget.savedMoney[2].toString(),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 24,
+                        child: Center(
+                          child: Text(
+                            widget.savedMoney[2].toString(),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 24,
+                            ),
                           ),
                         ),
                       )),
@@ -235,11 +245,13 @@ class _LastScreenState extends State<LastScreen> {
                             style: BorderStyle.solid,
                           ),
                         ),
-                        child: Text(
-                          widget.savedMoney[3].toString(),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 24,
+                        child: Center(
+                          child: Text(
+                            widget.savedMoney[3].toString(),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 24,
+                            ),
                           ),
                         ),
                       )),
@@ -266,11 +278,13 @@ class _LastScreenState extends State<LastScreen> {
                             style: BorderStyle.solid,
                           ),
                         ),
-                        child: Text(
-                          widget.savedMoney[4].toString(),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 24,
+                        child: Center(
+                          child: Text(
+                            widget.savedMoney[4].toString(),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 24,
+                            ),
                           ),
                         ),
                       )),
@@ -297,11 +311,13 @@ class _LastScreenState extends State<LastScreen> {
                             style: BorderStyle.solid,
                           ),
                         ),
-                        child: Text(
-                          widget.savedMoney[5].toString(),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 24,
+                        child: Center(
+                          child: Text(
+                            widget.savedMoney[5].toString(),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 24,
+                            ),
                           ),
                         ),
                       )),
@@ -323,7 +339,7 @@ class _LastScreenState extends State<LastScreen> {
               );
             },
             icon: const Icon(Icons.replay_circle_filled_outlined),
-            iconSize: 48,
+            iconSize: 64,
           )
         ],
       ),
