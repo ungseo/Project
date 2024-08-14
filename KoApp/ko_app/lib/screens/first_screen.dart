@@ -109,7 +109,7 @@ class _FirstScreenState extends State<FirstScreen> {
                       currentIndex += 1;
                       currentPapers = 0;
                     });
-                    if (currentIndex == 5) {
+                    if (currentIndex == 6) {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
