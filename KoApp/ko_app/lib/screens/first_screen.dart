@@ -41,6 +41,30 @@ class _FirstScreenState extends State<FirstScreen> {
     });
   }
 
+  void onDonePressed() {
+    int curType = currentType[currentIndex];
+    setState(() {
+      savedMoney[currentIndex] = currentPapers *
+          (curType == 500
+              ? 1
+              : curType == 100
+                  ? 1
+                  : curType);
+      totalMoney += savedMoney[currentIndex];
+      currentIndex += 1;
+      currentPapers = 0;
+    });
+    if (currentIndex == 6) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => LastScreen(
+                  savedMoney: savedMoney,
+                )),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // 페이지 목록을 정의
@@ -51,6 +75,7 @@ class _FirstScreenState extends State<FirstScreen> {
         writePapers: writePapers,
         currentType: currentType[currentIndex],
         currentPapers: currentPapers,
+        onDonePressed: onDonePressed,
       ),
     ];
     return Scaffold(

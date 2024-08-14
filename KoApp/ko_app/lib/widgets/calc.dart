@@ -9,9 +9,11 @@ class Calc extends StatefulWidget {
     this.writePapers,
     required this.currentType,
     required this.currentPapers,
+    this.onDonePressed,
   });
   final VoidCallback? plusPapers;
   final VoidCallback? minusPapers;
+  final VoidCallback? onDonePressed;
   final Function(String)? writePapers;
   final int currentType;
   final int currentPapers;
