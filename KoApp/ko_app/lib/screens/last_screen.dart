@@ -29,10 +29,13 @@ class _LastScreenState extends State<LastScreen> {
 
   @override
   void dispose() {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    Future.delayed(const Duration(milliseconds: 200), () {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
+    });
+
     super.dispose();
   }
 
@@ -40,22 +43,34 @@ class _LastScreenState extends State<LastScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text("퇴근이다~!!!"),
+          const SizedBox(
+            height: 10,
+          ),
+          const Text(
+            "퇴근이다~!!!",
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Column(
                 children: [
-                  const Expanded(
+                  const Flexible(
                       flex: 1,
                       child: Text(
                         '총 현금',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
+                            color: Colors.black,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold),
                       )),
-                  Expanded(
+                  Flexible(
                       flex: 5,
                       child: Container(
                         decoration: BoxDecoration(
@@ -77,16 +92,16 @@ class _LastScreenState extends State<LastScreen> {
               ),
               Column(
                 children: [
-                  const Expanded(
+                  const Flexible(
                       flex: 1,
                       child: Text(
                         '총 수익금',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
+                            color: Colors.black,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold),
                       )),
-                  Expanded(
+                  Flexible(
                       flex: 5,
                       child: Container(
                         decoration: BoxDecoration(
@@ -108,16 +123,16 @@ class _LastScreenState extends State<LastScreen> {
               ),
               Column(
                 children: [
-                  const Expanded(
+                  const Flexible(
                       flex: 1,
                       child: Text(
                         '50000원권',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
+                            color: Colors.black,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold),
                       )),
-                  Expanded(
+                  Flexible(
                       flex: 5,
                       child: Container(
                         decoration: BoxDecoration(
@@ -139,16 +154,16 @@ class _LastScreenState extends State<LastScreen> {
               ),
               Column(
                 children: [
-                  const Expanded(
+                  const Flexible(
                       flex: 1,
                       child: Text(
                         '10000원권',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
+                            color: Colors.black,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold),
                       )),
-                  Expanded(
+                  Flexible(
                       flex: 5,
                       child: Container(
                         decoration: BoxDecoration(
@@ -170,16 +185,16 @@ class _LastScreenState extends State<LastScreen> {
               ),
               Column(
                 children: [
-                  const Expanded(
+                  const Flexible(
                       flex: 1,
                       child: Text(
                         '5000원권',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
+                            color: Colors.black,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold),
                       )),
-                  Expanded(
+                  Flexible(
                       flex: 5,
                       child: Container(
                         decoration: BoxDecoration(
@@ -201,16 +216,16 @@ class _LastScreenState extends State<LastScreen> {
               ),
               Column(
                 children: [
-                  const Expanded(
+                  const Flexible(
                       flex: 1,
                       child: Text(
                         '1000원권',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
+                            color: Colors.black,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold),
                       )),
-                  Expanded(
+                  Flexible(
                       flex: 5,
                       child: Container(
                         decoration: BoxDecoration(
@@ -232,16 +247,16 @@ class _LastScreenState extends State<LastScreen> {
               ),
               Column(
                 children: [
-                  const Expanded(
+                  const Flexible(
                       flex: 1,
                       child: Text(
                         '500원',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
+                            color: Colors.black,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold),
                       )),
-                  Expanded(
+                  Flexible(
                       flex: 5,
                       child: Container(
                         decoration: BoxDecoration(
@@ -263,16 +278,16 @@ class _LastScreenState extends State<LastScreen> {
               ),
               Column(
                 children: [
-                  const Expanded(
+                  const Flexible(
                       flex: 1,
                       child: Text(
                         '100원',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
+                            color: Colors.black,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold),
                       )),
-                  Expanded(
+                  Flexible(
                       flex: 5,
                       child: Container(
                         decoration: BoxDecoration(
@@ -296,6 +311,12 @@ class _LastScreenState extends State<LastScreen> {
           ),
           IconButton(
             onPressed: () {
+              Future.delayed(const Duration(milliseconds: 200), () {
+                SystemChrome.setPreferredOrientations([
+                  DeviceOrientation.portraitUp,
+                  DeviceOrientation.portraitDown,
+                ]);
+              });
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const App()),

@@ -6,11 +6,13 @@ class Calc extends StatefulWidget {
     super.key,
     this.plusPapers,
     this.minusPapers,
+    this.writePapers,
     required this.currentType,
     required this.currentPapers,
   });
   final VoidCallback? plusPapers;
   final VoidCallback? minusPapers;
+  final Function(String)? writePapers;
   final int currentType;
   final int currentPapers;
 
@@ -19,6 +21,8 @@ class Calc extends StatefulWidget {
 }
 
 class _CalcState extends State<Calc> {
+  late int originalValue = 0;
+  late int curPapers;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -67,7 +71,13 @@ class _CalcState extends State<Calc> {
                         color: Colors.white.withOpacity(0.5),
                       ),
                       Text(
-                        (widget.currentPapers * widget.currentType).toString(),
+                        (widget.currentPapers *
+                                (widget.currentType == 500
+                                    ? 1
+                                    : widget.currentType == 100
+                                        ? 1
+                                        : widget.currentType))
+                            .toString(),
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 44,
@@ -81,16 +91,19 @@ class _CalcState extends State<Calc> {
                     ],
                   ),
                 ),
-                const Expanded(
+                Expanded(
                   flex: 1,
                   child: SizedBox(
                     width: 200,
                     child: TextField(
+                      onChanged: (value) {
+                        widget.writePapers!(value);
+                      },
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                       ),
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         fillColor: Colors.white,
                         hintText: '장수를 입력해 주세요.',
                         hintStyle: TextStyle(

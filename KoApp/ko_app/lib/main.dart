@@ -47,7 +47,7 @@ class App extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 60,
+                  height: 120,
                 ),
                 Container(
                   width: 300,
@@ -62,7 +62,7 @@ class App extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 60,
+                  height: 180,
                 ),
                 Button(
                   text: '정산하기',

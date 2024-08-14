@@ -31,6 +31,16 @@ class _FirstScreenState extends State<FirstScreen> {
     });
   }
 
+  void writePapers(String value) {
+    setState(() {
+      try {
+        currentPapers = int.parse(value);
+      } catch (e) {
+        currentPapers = 0;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // 페이지 목록을 정의
@@ -38,36 +48,7 @@ class _FirstScreenState extends State<FirstScreen> {
       Calc(
         plusPapers: plusPapers,
         minusPapers: minusPapers,
-        currentType: currentType[currentIndex],
-        currentPapers: currentPapers,
-      ),
-      Calc(
-        plusPapers: plusPapers,
-        minusPapers: minusPapers,
-        currentType: currentType[currentIndex],
-        currentPapers: currentPapers,
-      ),
-      Calc(
-        plusPapers: plusPapers,
-        minusPapers: minusPapers,
-        currentType: currentType[currentIndex],
-        currentPapers: currentPapers,
-      ),
-      Calc(
-        plusPapers: plusPapers,
-        minusPapers: minusPapers,
-        currentType: currentType[currentIndex],
-        currentPapers: currentPapers,
-      ),
-      Calc(
-        plusPapers: plusPapers,
-        minusPapers: minusPapers,
-        currentType: currentType[currentIndex],
-        currentPapers: currentPapers,
-      ),
-      Calc(
-        plusPapers: plusPapers,
-        minusPapers: minusPapers,
+        writePapers: writePapers,
         currentType: currentType[currentIndex],
         currentPapers: currentPapers,
       ),
@@ -76,6 +57,7 @@ class _FirstScreenState extends State<FirstScreen> {
       backgroundColor: Colors.black,
       body: Column(
         children: [
+          const SizedBox(height: 120),
           Expanded(
             flex: 1,
             child: Text(
@@ -115,9 +97,14 @@ class _FirstScreenState extends State<FirstScreen> {
                   bgColor: const Color.fromARGB(255, 16, 226, 9),
                   textColor: Colors.white,
                   onPressed: () {
+                    int curType = currentType[currentIndex];
                     setState(() {
-                      savedMoney[currentIndex] =
-                          currentPapers * currentType[currentIndex];
+                      savedMoney[currentIndex] = currentPapers *
+                          (curType == 500
+                              ? 1
+                              : curType == 100
+                                  ? 1
+                                  : curType);
                       totalMoney += savedMoney[currentIndex];
                       currentIndex += 1;
                       currentPapers = 0;
