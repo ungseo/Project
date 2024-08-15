@@ -10,6 +10,8 @@ class Calc extends StatefulWidget {
     required this.currentType,
     required this.currentPapers,
     this.onDonePressed,
+    required this.controller,
+    required this.focusNode,
   });
   final VoidCallback? plusPapers;
   final VoidCallback? minusPapers;
@@ -17,7 +19,8 @@ class Calc extends StatefulWidget {
   final Function(String)? writePapers;
   final int currentType;
   final int currentPapers;
-
+  final TextEditingController controller;
+  final FocusNode focusNode;
   @override
   State<Calc> createState() => _CalcState();
 }
@@ -98,18 +101,27 @@ class _CalcState extends State<Calc> {
                   child: SizedBox(
                     width: 200,
                     child: TextField(
+                      controller: widget.controller,
+                      focusNode: widget.focusNode,
                       onChanged: (value) {
                         widget.writePapers!(value);
+                      },
+                      onSubmitted: (value) {
+                        widget.onDonePressed!();
+                        widget.controller.text = '';
                       },
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         color: Colors.white,
                       ),
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         fillColor: Colors.white,
-                        hintText: '장수를 입력해 주세요.',
+                        hintText: widget.focusNode.hasFocus ||
+                                widget.controller.text.isNotEmpty
+                            ? ""
+                            : "종이 수를 입력하세요", // 포커스 시 placeholder 사라짐,
                         hintStyle: TextStyle(
-                          color: Colors.white,
+                          color: Colors.white.withOpacity(0.4),
                         ),
                       ),
                       keyboardType: TextInputType.number,

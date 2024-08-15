@@ -18,6 +18,8 @@ class _FirstScreenState extends State<FirstScreen> {
   List<int> currentType = [50000, 10000, 5000, 1000, 500, 100];
   int currentIndex = 0;
   List<int> savedMoney = [0, 0, 0, 0, 0, 0];
+  final TextEditingController _controller = TextEditingController();
+  final FocusNode _focusNode = FocusNode();
   void plusPapers() {
     setState(() {
       currentPapers += 1;
@@ -53,6 +55,8 @@ class _FirstScreenState extends State<FirstScreen> {
       totalMoney += savedMoney[currentIndex];
       currentIndex += 1;
       currentPapers = 0;
+      _controller.clear();
+      _focusNode.requestFocus();
     });
     if (currentIndex == 6) {
       Navigator.push(
@@ -76,6 +80,8 @@ class _FirstScreenState extends State<FirstScreen> {
         currentType: currentType[currentIndex],
         currentPapers: currentPapers,
         onDonePressed: onDonePressed,
+        controller: _controller,
+        focusNode: _focusNode,
       ),
     ];
     return Scaffold(
@@ -115,6 +121,8 @@ class _FirstScreenState extends State<FirstScreen> {
                       currentIndex -= 1;
                       currentPapers = 0;
                     });
+                    _controller.clear();
+                    _focusNode.requestFocus();
                   },
                 ),
                 Button(
@@ -122,27 +130,7 @@ class _FirstScreenState extends State<FirstScreen> {
                   bgColor: const Color.fromARGB(255, 16, 226, 9),
                   textColor: Colors.white,
                   onPressed: () {
-                    int curType = currentType[currentIndex];
-                    setState(() {
-                      savedMoney[currentIndex] = currentPapers *
-                          (curType == 500
-                              ? 1
-                              : curType == 100
-                                  ? 1
-                                  : curType);
-                      totalMoney += savedMoney[currentIndex];
-                      currentIndex += 1;
-                      currentPapers = 0;
-                    });
-                    if (currentIndex == 6) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => LastScreen(
-                                  savedMoney: savedMoney,
-                                )),
-                      );
-                    }
+                    onDonePressed();
                   },
                 ),
               ],
