@@ -1,0 +1,4 @@
+<resources>
+    <!-- 앱 이름 -->
+    <string name="app_name">New App Name</string>
+</resources>

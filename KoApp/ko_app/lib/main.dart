@@ -13,7 +13,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: const Color(0xFFFCFDF7),
         body: Builder(
           builder: (BuildContext context) {
             return Column(
@@ -28,18 +28,18 @@ class App extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         const Text(
-                          'KoUng',
+                          'CalcuRail ',
                           style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 32,
+                            color: Colors.black,
+                            fontSize: 44,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         Text(
-                          '정산하기 앱',
+                          '정산하기 앱  ',
                           style: TextStyle(
-                            color: Colors.white.withOpacity(0.8),
-                            fontSize: 16,
+                            color: Colors.black.withOpacity(0.4),
+                            fontSize: 24,
                           ),
                         ),
                       ],
