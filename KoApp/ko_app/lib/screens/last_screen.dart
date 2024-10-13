@@ -84,7 +84,7 @@ class _LastScreenState extends State<LastScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          numberFormat(totalMoney),
+                          numberFormat(totalMoney - 1000000),
                           style: const TextStyle(
                             color: Colors.black,
                             fontSize: 24,
@@ -116,7 +116,7 @@ class _LastScreenState extends State<LastScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          numberFormat(totalMoney + 1000000),
+                          numberFormat(totalMoney),
                           style: const TextStyle(
                             color: Colors.black,
                             fontSize: 24,

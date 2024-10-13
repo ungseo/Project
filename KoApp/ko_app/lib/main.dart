@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ko_app/screens/alarm_screen.dart';
 import 'package:ko_app/widgets/button.dart';
 import 'package:ko_app/screens/first_screen.dart';
 
@@ -67,12 +68,24 @@ class App extends StatelessWidget {
                 Button(
                   text: '정산하기',
                   bgColor: const Color(0xFFF1B33B),
-                  textColor: Colors.black,
+                  textColor: Colors.white,
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const FirstScreen()),
+                    );
+                  },
+                ),
+                Button(
+                  text: '알람설정',
+                  bgColor: const Color.fromARGB(255, 83, 59, 11),
+                  textColor: Colors.white,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AlarmScreen()),
                     );
                   },
                 ),
